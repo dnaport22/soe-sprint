@@ -1,0 +1,44 @@
+<ion-view view-title="Login" class="background">
+  <ion-content overflow-scroll="false"
+               has-bouncing="false"
+               style="padding-top: 50px;"
+               ng-controller="Login">
+    <div class="row">
+      <div class="col col-center text-center">
+      <div class="item-image" style="padding-bottom: 5vh">
+        <img style='height: 15vh;
+             width: auto;'
+             src="../img/lsbuLogo.png">
+      </div>
+      </div>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input item-stacked-label">
+        <input type="text"
+               placeholder="Username"
+               ng-model="data.email">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <input type="password"
+               placeholder="Password"
+               ng-model="data.password">
+      </label>
+    </div>
+    <div class="row">
+      <button
+              class="button button-balanced button-full tabs tabs-icon-top"
+              ng-click="login()"
+              style="background-color: #93328e">
+            Login
+      </button>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="bar-royal">
+    <div class="col col-center text-center">
+      <div class="button button-royal button-full">Register</div>
+    </div>
+    <div class="col col-center text-center">
+      <div class="button button-royal button-full">Forgot</div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

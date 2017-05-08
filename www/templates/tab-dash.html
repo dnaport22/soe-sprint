@@ -1,0 +1,23 @@
+<ion-view view-title="Feeds">
+  <ion-content class="padding">
+    <!-- in the class below add ng-repeat and change image, name and other stuff according to live data -->
+
+    <!-- Card view of the items -->
+      <div ng-repeat="item in items">
+        <div href="#" class="list card">
+            <a class="item item-icon-right">
+                {{::item.value}}
+            </a>
+        </div>
+      </div>
+    
+    <!-- End Main grid -->
+    <!-- Infinite scroll directive -->
+    <ion-infinite-scroll
+      ng-if="check()"
+      on-infinite="loadMore()"
+      distance="10%">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>
