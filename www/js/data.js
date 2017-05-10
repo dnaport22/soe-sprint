@@ -1,7 +1,7 @@
 soe.constant('soeData_URL', {
   GET_ALL_ITEM_URL: 'http://soe-backend.sytes.net/api/news-full?_format=json',
   GET_ALL_ITEM_TYPE: 'GET',
-  LOGIN_USER_URL: 'http://service.mysoe.xyz/login.php',
+  LOGIN_USER_URL: 'http://soe-backend.sytes.net/lsbu/soe?entity=user&type=login',
   LOGIN_USER_TYPE: 'POST',
   REGISTER_USER_URL: 'http://service.mysoe.xyz/register.php',
   REGISTER_USER_TYPE: 'POST',

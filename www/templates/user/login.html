@@ -1,8 +1,7 @@
 <ion-view view-title="Login" class="background">
   <ion-content overflow-scroll="false"
                has-bouncing="false"
-               style="padding-top: 50px;"
-               ng-controller="Login">
+               style="padding-top: 50px;">
     <div class="row">
       <div class="col col-center text-center">
       <div class="item-image" style="padding-bottom: 5vh">
@@ -16,18 +15,18 @@
       <label class="item item-input item-stacked-label">
         <input type="text"
                placeholder="Username"
-               ng-model="data.email">
+               id="login_email">
       </label>
       <label class="item item-input item-stacked-label">
         <input type="password"
                placeholder="Password"
-               ng-model="data.password">
+               id="login_pass">
       </label>
     </div>
     <div class="row">
       <button
               class="button button-balanced button-full tabs tabs-icon-top"
-              ng-click="login()"
+              ng-click="loginUser()"
               style="background-color: #93328e">
             Login
       </button>

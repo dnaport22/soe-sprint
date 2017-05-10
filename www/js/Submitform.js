@@ -7,16 +7,19 @@ function Submitform(type, url, data, cache) {
 }
 
 Submitform.prototype.ajaxSubmit = function(callback) {
+  console.log(this.dataArray)
   $.ajax({
     type: this.type,
     url: this.url,
     cache: this.cache,
     data: this.dataArray,
     success: function(response) {
-      callback.onSuccess(response);
+      console.log(response)
+      //callback.onSuccess(response);
     },
     error: function(error) {
-      callback.onError(error);
+      console.log(error)
+      //callback.onError(error);
     }
   });
 }
