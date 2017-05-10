@@ -73,7 +73,38 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     url: '/login',
     views: {
       'tab-login': {
-        templateUrl: 'templates/user/login.html'
+        templateUrl: 'templates/user/login.html',
+        controller: 'loginctrl'
+      }
+    }
+  })
+
+  .state('tab.register', {
+    url: '/register',
+    views: {
+      'tab-register': {
+        templateUrl: 'templates/user/register.html',
+        controller: 'registerctrl'
+      }
+    }
+  })
+
+  .state('tab.resetpass', {
+    url: '/resetpass',
+    views: {
+      'tab-resetpass': {
+        templateUrl: 'templates/user/resetpass.html',
+        controller: 'resetpassctrl'
+      }
+    }
+  })
+
+  .state('tab.resetrequest', {
+    url: '/register',
+    views: {
+      'tab-register': {
+        templateUrl: 'templates/user/resetrequest.html',
+        controller: 'resetrequestctrl'
       }
     }
   })
