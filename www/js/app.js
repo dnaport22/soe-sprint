@@ -35,7 +35,8 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs.html',
+    controller: 'mainctrl'
   })
 
   // Each tab has its own nav history stack:
@@ -51,60 +52,11 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
   })
 
   .state('tab.attendance', {
-      url: '/attendance',
-      views: {
-        'tab-attendance': {
-          templateUrl: 'templates/tab-attendance.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-  })
-
-  .state('tab.settings', {
-    url: '/settings',
+    url: '/attendance',
     views: {
-      'tab-settings': {
-        templateUrl: 'templates/settings.html'
-      }
-    }
-  })
-
-  .state('tab.login', {
-    url: '/login',
-    views: {
-      'tab-login': {
-        templateUrl: 'templates/user/login.html',
-        controller: 'loginctrl'
-      }
-    }
-  })
-
-  .state('tab.register', {
-    url: '/register',
-    views: {
-      'tab-register': {
-        templateUrl: 'templates/user/register.html',
-        controller: 'registerctrl'
-      }
-    }
-  })
-
-  .state('tab.resetpass', {
-    url: '/resetpass',
-    views: {
-      'tab-resetpass': {
-        templateUrl: 'templates/user/resetpass.html',
-        controller: 'resetpassctrl'
-      }
-    }
-  })
-
-  .state('tab.resetrequest', {
-    url: '/register',
-    views: {
-      'tab-register': {
-        templateUrl: 'templates/user/resetrequest.html',
-        controller: 'resetrequestctrl'
+      'tab-attendance': {
+        templateUrl: 'templates/tab-attendance.html',
+        controller: 'ChatsCtrl'
       }
     }
   })
@@ -117,9 +69,57 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
         controller: 'AccountCtrl'
       }
     }
+  })
+
+  .state('tab.settings', {
+    url: '/settings',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/settings.html'
+      }
+    }
+  })
+
+  .state('tab.login', {
+    url: '/login',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/user/login.html',
+        controller: 'loginctrl'
+      }
+    }
+  })
+
+  .state('tab.register', {
+    url: '/register',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/user/register.html',
+        controller: 'registerctrl'
+      }
+    }
+  })
+
+  .state('tab.resetpass', {
+    url: '/resetpass',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/user/resetpass.html',
+        controller: 'resetpassctrl'
+      }
+    }
+  })
+
+  .state('tab.resetrequest', {
+    url: '/register',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/user/resetrequest.html',
+        controller: 'resetrequestctrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
-
 });
