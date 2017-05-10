@@ -1,4 +1,4 @@
-soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionicPlatform, $location, $timeout, $state, $localStorage, UIfactory, soeData_URL, $templateCache, $ionicScrollDelegate, $rootScope) {
+soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionicPlatform, $location, $timeout, $localStorage, UIfactory, soeData_URL, $templateCache, $ionicScrollDelegate, $rootScope) {
   $rootScope.slideHeader = false;
   $rootScope.pixelLimit = 0;
 
@@ -122,4 +122,8 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     UIfactory.showSpinner();
     $state.go('app.userguide');
   }
+
+  $scope.test = function () {
+    $location.path('tab/attendance');
+  };
  });

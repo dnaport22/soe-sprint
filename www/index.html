@@ -44,17 +44,19 @@
     
     <script src="js/plugin/ng-cordova.js"></script>
     <script src="js/plugin/ngStorage.min.js"></script>
+
+    <script src="js/controller/navctrl.js"></script>
     
   </head>
   <body ng-app="soe">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-royal">
+    <ion-nav-bar class="bar-royal" ng-controller="navctrl">
       <ion-nav-back-button>
       </ion-nav-back-button>
-      <ion-nav-buttons side="right" href="#/tab/attendance">
-        <button class="button icon ion-gear-a">
+      <ion-nav-buttons side="right">
+        <button class="button icon ion-gear-a" ng-click="openSettings()">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>

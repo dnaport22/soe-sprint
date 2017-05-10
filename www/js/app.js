@@ -58,27 +58,25 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
           controller: 'ChatsCtrl'
         }
       }
-    })
-    
-   .state('tab.settings', {
-      url: '/settings',
-      views: {
-        'tab-settings': {
-          templateUrl: 'templates/settings.html',
-          controller: 'ChatsCtrl'
-        }
+  })
+
+  .state('tab.settings', {
+    url: '/settings',
+    views: {
+      'tab-settings': {
+        templateUrl: 'templates/settings.html'
       }
-    })
-    
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
+    }
+  })
+
+  .state('tab.login', {
+    url: '/login',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/user/login.html'
       }
-    })
+    }
+  })
 
   .state('tab.feedback', {
     url: '/feedback',
