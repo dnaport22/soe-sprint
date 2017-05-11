@@ -1,4 +1,4 @@
-soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistory) {
+soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistory, $ionicTabsDelegate) {
 
   // Setting up local variables for app navigation logic
   $scope.$storage = $localStorage.$default({

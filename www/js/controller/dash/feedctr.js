@@ -5,7 +5,13 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   $scope.$on("$ionicView.beforeEnter", function () {
     $ionicTabsDelegate.showBar(true);
   });
-  //
+
+  $scope.goForward = function () {
+    var selected = $ionicTabsDelegate.selectedIndex();
+    if (selected != 0) {
+      $ionicTabsDelegate.select(selected + 1);
+    }
+  };
 
   /**
    * Loading spinner
