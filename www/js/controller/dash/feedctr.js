@@ -1,9 +1,10 @@
 soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionicPlatform, $location, $timeout, $localStorage, UIfactory, soeData_URL, $templateCache, $ionicScrollDelegate, $rootScope, $ionicTabsDelegate) {
   $rootScope.slideHeader = false;
   $rootScope.pixelLimit = 0;
-  $ionicTabsDelegate.showBar(true);
-  // $ionicHistory.removeBackView();
-  // $ionicHistory.clearCache();
+
+  $scope.$on("$ionicView.beforeEnter", function () {
+    $ionicTabsDelegate.showBar(true);
+  });
   //
 
   /**
@@ -84,19 +85,6 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   $scope.check = function() {
     return retrieved > 0
   }
-
-  /**
-   * Description: used for navigating user to getitem and login/post item page.
-   */
-  $scope.trafficLight = function(route, item_name, item_desc, item_date, item_uid, item_img) {
-    if (route == 'getitem') {
-      $location.path("/app/getitem/" + item_name + "/" + item_desc + "/" + item_date + "/" + item_uid + "/" + item_img )
-    }
-    else if (route == 'login') {
-      $ionicHistory.nextViewOptions({disableBack: false});
-      $location.path("app/login/postitem");
-    }
-  }
   
   $scope.$on('$ionicView.loaded', function() {
       $scope.loadMore();
@@ -126,8 +114,4 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     UIfactory.showSpinner();
     $state.go('app.userguide');
   }
-
-  $scope.test = function () {
-    $location.path('tab/attendance');
-  };
  });

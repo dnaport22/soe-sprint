@@ -56,7 +56,7 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     views: {
       'tab-attendance': {
         templateUrl: 'templates/tab-attendance.html',
-        controller: 'ChatsCtrl'
+        controller: 'attendancectrl'
       }
     }
   })
@@ -66,7 +66,7 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     views: {
       'tab-feedback': {
         templateUrl: 'templates/tab-feedback.html',
-        controller: 'AccountCtrl'
+        controller: 'feedbackctrl'
       }
     }
   })
