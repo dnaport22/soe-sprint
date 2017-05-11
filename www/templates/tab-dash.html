@@ -4,16 +4,16 @@
 
     <!-- Card view of the items -->
     <div ng-repeat="item in items">
-
-      <div class="card">
+      <div class="card" ng-click="fullView('sampleTitle', 'sampleBody', 'imgUrl')">
         <h3 class="teaser-title">This is the title of our feed</h3>
         <div class="teaser-container">
           <img class="teaser-image" src="../../img/lsbuLogo.png">
-          <p class="teaser-body">{{::item.value | htmlToPlaintext}}<span class="teaser-more">read more</span></p>
+          <p class="teaser-body">{{::item.value | htmlToPlaintext}}
+            <span class="teaser-more" ng-click="fullView('sampleTitle', 'sampleBody', 'imgurl')">read more</span>
+          </p>
         </div>
       </div>
     </div>
-    
     <!-- End Main grid -->
     <!-- Infinite scroll directive -->
     <ion-infinite-scroll

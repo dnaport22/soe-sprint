@@ -29,7 +29,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     else if (type == 'grid') {
       $scope.viewType = 'list';
     }
-  }
+  };
 
   /**
    * Variables and array to store and retrieve items
@@ -61,9 +61,9 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
 
   $scope.processData = function(data) {
     for (i = 0; i < data.length; i++) {
-      $scope.items = $scope.items.concat(data[i])
+      $scope.items = $scope.items.concat(data[i]);
     }
-  }
+  };
   
   /**
    * Description: search() function is called on ng-change in search input field,
@@ -73,16 +73,16 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   $scope.search = function(filter) {
     $scope.inputVal = true;
     $scope.items = [];
-    offset = 0
+    offset = 0;
     $scope.loadMore();
-  }
+  };
 
   $scope.pullToRefresh = function() {
     $scope.items = [];
-    offset = 0
+    offset = 0;
     $templateCache.removeAll();
     $scope.loadMore();
-  }
+  };
 
   /**
    * Description: check() function is called by infinite scroll to check if there
@@ -90,7 +90,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
    */
   $scope.check = function() {
     return retrieved > 0
-  }
+  };
   
   $scope.$on('$ionicView.loaded', function() {
       $scope.loadMore();
@@ -99,7 +99,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   $scope.reloadData = function() {
     $state.go($state.current, {reload: true, inherit: false})
     $scope.$broadcast('scroll.refreshComplete');
-  }
+  };
 
   /**
    * Description: clears input field and hide clear button.
@@ -108,9 +108,13 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     inputVal.setValue('search', '');
     $scope.inputVal = false;
     $scope.items = [];
-    offset = 0
+    offset = 0;
     $scope.loadMore();
-  }
+  };
+
+  $scope.fullView = function (feed_title, feed_body, feed_img) {
+    $location.path('/tab/fullfeed/' + feed_title + '/' + feed_body );
+  };
 
   /**
    * This is redirect the user to app.userguide state,

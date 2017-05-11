@@ -51,6 +51,16 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     }
   })
 
+  .state('tab.fullfeed', {
+    url: '/fullfeed/:feed_title/:feed_body',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/fullfeed.html',
+        controller: 'fullfeedctrl'
+      }
+    }
+  })
+
   .state('tab.attendance', {
     url: '/attendance',
     views: {
