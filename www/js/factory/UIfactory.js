@@ -3,7 +3,7 @@ soe.factory('UIfactory', function($http, $ionicPopup, $ionicLoading) {
     showAlert: function(title, template) {
       var alertPopup = $ionicPopup.alert({
         title: title,
-        template: template,
+        template: template
       });
       return alertPopup;
     },

@@ -14,12 +14,10 @@ Submitform.prototype.ajaxSubmit = function(callback) {
     cache: this.cache,
     data: this.dataArray,
     success: function(response) {
-      console.log(response)
-      //callback.onSuccess(response);
+      callback.onSuccess(response);
     },
     error: function(error) {
-      console.log(error)
-      //callback.onError(error);
+      callback.onError(error);
     }
   });
 }

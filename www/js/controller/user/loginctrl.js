@@ -7,7 +7,7 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
   var PassId = soeData_AUTH.LOGIN_PASS;
   const BASE_URL = soeData_URL.LOGIN_USER_URL;
 
-  $scope.loginUser = function() {
+  $scope.loginUser = function () {
     UIfactory.showSpinner();
     var login_data = {
       email: inputVal.getValue(EmailId),
@@ -22,7 +22,7 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
     }
   };
 
-  $scope.onSuccess = function(response) {
+  $scope.onSuccess = function (response) {
     if (response.status == 0) {
       UIfactory.hideSpinner();
       return UIfactory.showAlert('Alert', LoginNotifications.INVALID_ACCOUNT);
@@ -38,11 +38,15 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
     }
   };
 
-  var userStorage = function(data) {
-    $localStorage.user_login_id = 1;
-    $localStorage.user_username = data.name;
-    $localStorage.user_email = data.email;
-    $localStorage.user_activation = data.activation;
+  $scope.onError = function (error) {
+    console.log(error)
+  };
+
+  var userStorage = function (data) {
+    $localStorage.soe_user_status = 1;
+    $localStorage.soe_user_username = data.name;
+    $localStorage.soe_user_email = data.email;
+    $localStorage.soe_user_token = data.activation;
     $localStorage.expiry = new Date().getTime();
     return reloadForm();
   };
@@ -53,7 +57,7 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
     return redirectUser();
   };
 
-  var redirectUser = function() {
+  var redirectUser = function () {
     UIfactory.showSpinner();
     if (path == 'getitem') {
       UIfactory.hideSpinner();
