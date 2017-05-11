@@ -1,4 +1,4 @@
-soe.controller('LoginController', function($scope, $state, $ionicSideMenuDelegate, $ionicHistory, $stateParams, $localStorage, soeData_AUTH, soeData_URL, UserFactory, UIfactory, LoginNotifications) {
+soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $ionicHistory, $stateParams, $localStorage, soeData_AUTH, soeData_URL, UserFactory, UIfactory, LoginNotifications) {
   UIfactory.hideSpinner();
   $scope.loginMessage = null;
 
