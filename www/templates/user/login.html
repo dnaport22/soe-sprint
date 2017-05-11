@@ -34,10 +34,18 @@
   </ion-content>
   <ion-footer-bar class="bar-royal">
     <div class="col col-center text-center">
-      <div class="button button-royal button-full">Register</div>
+      <div
+          class="button button-royal button-full"
+          ng-click="redirectUser('register')">
+        Register
+      </div>
     </div>
     <div class="col col-center text-center">
-      <div class="button button-royal button-full">Forgot</div>
+      <div
+          class="button button-royal button-full"
+          ng-click="redirectUser('forgot')">
+        Forgot
+      </div>
     </div>
   </ion-footer-bar>
 </ion-view>

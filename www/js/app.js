@@ -111,11 +111,11 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
   })
 
   .state('tab.resetrequest', {
-    url: '/register',
+    url: '/resetrequest',
     views: {
       'tab-dash': {
         templateUrl: 'templates/user/resetrequest.html',
-        controller: 'resetrequestctrl'
+        controller: 'requestresetctrl'
       }
     }
   });

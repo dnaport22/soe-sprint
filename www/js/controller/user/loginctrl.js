@@ -57,32 +57,18 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
     return redirectUser();
   };
 
-  var redirectUser = function () {
+  $scope.redirectUser = function (path) {
     UIfactory.showSpinner();
-    if (path == 'getitem') {
+    if (path == 'register') {
       UIfactory.hideSpinner();
-      $ionicHistory.goBack();
+      $state.go('tab.register')
     }
-    else if (path == 'main') {
+    else if (path == 'forgot') {
       UIfactory.hideSpinner();
-      $state.go('app.main');
-      $ionicSideMenuDelegate.toggleLeft();
-    }
-    else if (path == 'postitem') {
-      UIfactory.hideSpinner();
-      $ionicHistory.goBack();
+      $state.go('tab.resetrequest');
     }
   };
 
-  //Login intent message
-  if (path == 'main') {
-    $scope.loginMessage = 'Log in to get or post items.';
-  }
-  else if(path == 'postitem') {
-    $scope.loginMessage = 'Log in to post items.';
-  }
-  else if (path == 'getitem') {
-    $scope.loginMessage = 'Log in to send a message.';
-  }
+
 
 });

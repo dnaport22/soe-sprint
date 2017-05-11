@@ -1,4 +1,4 @@
-soe.controller('RegisterController', function($scope, UIfactory, $ionicHistory, soeData_AUTH, UserFactory, soeData_URL) {
+soe.controller('registerctrl', function($scope, UIfactory, $ionicHistory, soeData_AUTH, UserFactory, soeData_URL) {
   $scope.isChecked = {
     checkbox: false
   };

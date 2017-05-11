@@ -1,4 +1,4 @@
-soe.controller('RequestResetController', function($scope, UIfactory, UserFactory, soeData_URL, soeData_RESETPASS) {
+soe.controller('requestresetctrl', function($scope, UIfactory, UserFactory, soeData_URL, soeData_RESETPASS) {
 
   const BASE_URL = soeData_URL.RESET_REQUEST_URL;
   var EmailId = soeData_RESETPASS.RESET_REQUEST;
