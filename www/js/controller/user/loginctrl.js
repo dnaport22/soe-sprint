@@ -1,6 +1,7 @@
-soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $ionicHistory, $stateParams, $localStorage, soeData_AUTH, soeData_URL, UserFactory, UIfactory, LoginNotifications) {
+soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $ionicHistory, $stateParams, $localStorage, soeData_AUTH, soeData_URL, UserFactory, UIfactory, LoginNotifications, $ionicNavBarDelegate, $ionicTabsDelegate) {
   UIfactory.hideSpinner();
   $scope.loginMessage = null;
+  $ionicTabsDelegate.showBar(false);
 
   var path = $stateParams.path;
   var EmailId = soeData_AUTH.LOGIN_EMAIL;
@@ -28,25 +29,20 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
       return UIfactory.showAlert('Alert', LoginNotifications.INVALID_ACCOUNT);
     }
     else if(response.status == 1) {
-      if(response.user.status == 0) {
-        UIfactory.hideSpinner();
-        return UIfactory.showAlert('Alert', LoginNotifications.INACTIVE_ACCOUNT);
-      }
-      else {
-        return userStorage(response.user);
-      }
+      UIfactory.hideSpinner();
+      return userStorage(response.body);
     }
   };
 
   $scope.onError = function (error) {
-    console.log(error)
+    UIfactory.showAlert('Alert', LoginNotifications.ERROR_LOGIN);
   };
 
   var userStorage = function (data) {
     $localStorage.soe_user_status = 1;
-    $localStorage.soe_user_username = data.name;
+    $localStorage.soe_user_username = data.username;
     $localStorage.soe_user_email = data.email;
-    $localStorage.soe_user_token = data.activation;
+    $localStorage.soe_user_token = data.uid;
     $localStorage.expiry = new Date().getTime();
     return reloadForm();
   };
@@ -54,7 +50,8 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
   var reloadForm = function() {
     inputVal.setValue(EmailId, '');
     inputVal.setValue(PassId, '');
-    return redirectUser();
+    $ionicNavBarDelegate.showBackButton(false);
+    return $state.go('tab.dash');
   };
 
   $scope.redirectUser = function (path) {

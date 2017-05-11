@@ -35,6 +35,7 @@ soe.controller('registerctrl', function($scope, UIfactory, $ionicHistory, soeDat
   };
 
   $scope.onSuccess = function(response) {
+    console.log(response);
     if (response.status == 1) {
       UIfactory.hideSpinner();
       UIfactory.showAlert('Registered successfully', 'A validation email has been sent to your LSBU email account. Please validate your email to start using your account.');
@@ -44,6 +45,10 @@ soe.controller('registerctrl', function($scope, UIfactory, $ionicHistory, soeDat
       UIfactory.hideSpinner();
       UIfactory.showAlert('Alert', 'Email already registred');
     }
+  };
+
+  $scope.onError = function (error) {
+    console.log(error)
   };
 
   var reloadForm = function() {

@@ -75,7 +75,8 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
     url: '/settings',
     views: {
       'tab-dash': {
-        templateUrl: 'templates/settings.html'
+        templateUrl: 'templates/settings.html',
+        controller: 'settingsctrl'
       }
     }
   })

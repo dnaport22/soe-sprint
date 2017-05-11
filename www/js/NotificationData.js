@@ -4,17 +4,18 @@ soe.constant('LoginNotifications', {
   MENU_REDIRECT: 'Log in to get or post items.',
   MAIN_POST_REDIRECT: 'Log in to post items.',
   MESSAGE_REDIRECT: 'Log in to send a message.',
+  ERROR_LOGIN: 'Ooops! Error occurred while logging you in.'
 });
 
 soe.constant('RegisterNotifications', {
   ACCEPT_TC: 'Please confirm you accept the terms and conditions.',
   COMPLETE_REGISTER: 'To complete your registration, please go to your LSBU email account to verify your email address.',
-  DUPLICATE_ACCOUNT: 'There is already an account registered with this email address.',
+  DUPLICATE_ACCOUNT: 'There is already an account registered with this email address.'
 });
 
 soe.constant('RequestRegisterNotification', {
   RESET_ERROR: 'Your password could not be reset. Please try again in a few minutes or email us on hello@mysoe.xyz',
-  RESET_SUCCESS: 'To reset your password, please go to your LSBU email account.',
+  RESET_SUCCESS: 'To reset your password, please go to your LSBU email account.'
 });
 
 soe.constant('ResetVerifyNotification', {
@@ -23,7 +24,7 @@ soe.constant('ResetVerifyNotification', {
 });
 
 soe.constant('MyitemPageNotification', {
-  DELETE_ERROR: 'An error occurred while deleting your item. Please try restarting the app.',
+  DELETE_ERROR: 'An error occurred while deleting your item. Please try restarting the app.'
 });
 
 soe.constant('PostitemNotification', {
@@ -40,4 +41,4 @@ soe.constant('UserfactoryNotification', {
   PASSWORD_MATCH_ERROR: 'Password do not match.',
   PASSWORD_LENGTH_ERROR: 'Password should be at least 8 characters long.',
   PASSWORD_STRENGTH_ERROR: 'Password should contain at least one number.'
-})
+});

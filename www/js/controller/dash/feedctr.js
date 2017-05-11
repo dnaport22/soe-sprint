@@ -1,6 +1,10 @@
-soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionicPlatform, $location, $timeout, $localStorage, UIfactory, soeData_URL, $templateCache, $ionicScrollDelegate, $rootScope) {
+soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionicPlatform, $location, $timeout, $localStorage, UIfactory, soeData_URL, $templateCache, $ionicScrollDelegate, $rootScope, $ionicTabsDelegate) {
   $rootScope.slideHeader = false;
   $rootScope.pixelLimit = 0;
+  $ionicTabsDelegate.showBar(true);
+  // $ionicHistory.removeBackView();
+  // $ionicHistory.clearCache();
+  //
 
   /**
    * Loading spinner
