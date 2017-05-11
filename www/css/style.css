@@ -1,1 +1,37 @@
-/* Empty. Add your own CSS if you like */
+.teaser-title{
+    margin: 1vw 2vw 3vw 2vw;
+    font-weight: bold;
+}
+
+.teaser-image{
+    float: left;
+    margin: 2vw 4vw 2vw 2vw;
+    width: 33vw;
+}
+
+.teaser-body{
+    margin: 2vw;
+    text-align: left;
+}
+
+.teaser-more{
+    color: #696969;
+}
+
+.modal-title{
+    margin: 10vh 2vw 4vh 2vw !important;
+    font-weight: bold;
+}
+
+.modal-image{
+    float: left;
+    margin: 2vw 4vw 2vw 2vw;
+    width: 40vw;
+}
+
+.modal-body{
+    text-align: left;
+    margin: 2vw;
+    font-size: 1.2rem;
+    color: #696969;
+}
