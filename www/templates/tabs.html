@@ -5,18 +5,18 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-light tabs-royal">
 
-    <!-- Dashboard Tab -->
-    <ion-tab title="Feeds" icon-off="ion-ios-world-outline" icon-on="ion-ios-world-outline" href="#/tab/dash" dis>
+    <!-- Feeds Tab -->
+    <ion-tab title="Feeds" icon-off="ion-ios-world-outline" icon-on="ion-ios-world-outline" ng-click="openFeedView()">
         <ion-nav-view name="tab-dash"></ion-nav-view>
     </ion-tab>
 
-    <!-- Chats Tab -->
-    <ion-tab title="Attendance" icon-off="ion-calendar" icon-on="ion-calendar" href="#/tab/attendance">
+    <!-- Attendance Tab -->
+    <ion-tab title="Attendance" icon-off="ion-calendar" icon-on="ion-calendar" ng-click="openAttendanceView()">
         <ion-nav-view name="tab-attendance"></ion-nav-view>
     </ion-tab>
 
-    <!-- Account Tab -->
-    <ion-tab title="Send Feedback" icon-off="ion-ios-paperplane-outline" icon-on="ion-ios-paperplane-outline" href="#/tab/feedback">
+    <!-- Feedback Tab -->
+    <ion-tab title="Send Feedback" icon-off="ion-ios-paperplane-outline" icon-on="ion-ios-paperplane-outline" ng-click="openFeedbackView()">
         <ion-nav-view name="tab-feedback"></ion-nav-view>
     </ion-tab>
 

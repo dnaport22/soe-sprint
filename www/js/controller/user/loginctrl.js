@@ -3,7 +3,6 @@ soe.controller('loginctrl', function($scope, $state, $ionicSideMenuDelegate, $io
   $scope.loginMessage = null;
   $ionicTabsDelegate.showBar(false);
 
-  var path = $stateParams.path;
   var EmailId = soeData_AUTH.LOGIN_EMAIL;
   var PassId = soeData_AUTH.LOGIN_PASS;
   const BASE_URL = soeData_URL.LOGIN_USER_URL;
