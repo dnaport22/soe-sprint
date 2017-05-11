@@ -6,7 +6,7 @@
       <div ng-repeat="item in items">
         <div href="#" class="list card">
             <a class="item item-icon-right">
-                {{::item.value}}
+                {{::item.value | htmlToPlaintext}}
             </a>
         </div>
       </div>

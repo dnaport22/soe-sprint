@@ -121,3 +121,9 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     $state.go('app.userguide');
   }
  });
+
+soe.filter('htmlToPlaintext', function() {
+  return function(text) {
+    return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
+  };
+});
