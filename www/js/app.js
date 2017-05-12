@@ -129,8 +129,17 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
         controller: 'requestresetctrl'
       }
     }
-  });
+  })
 
+  .state('tab.termsandconditions', {
+    url: '/termsandconditions',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/termsandconditions.html',
+        controller: 'termsandconditionsctrl'
+      }
+    }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });
