@@ -150,6 +150,16 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
       }
     }
   })
+
+  .state('tab.privacypolicy', {
+    url: 'privacypolicy',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/privacypolicy.html',
+        controller: 'privacypolicyctrl'
+      }
+    }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });

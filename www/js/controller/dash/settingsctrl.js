@@ -10,6 +10,9 @@ soe.controller('settingsctrl', function ($scope, $ionicTabsDelegate, $ionicHisto
 		$state.go('tab.about');
 	}
 
+	$scope.openPrivacyPolicy = function() {
+		$state.go('tab.privacypolicy');
+	}
 	$scope.openTermsAndConditions = function () {
 		$state.go('tab.termsandconditions');
 	};
