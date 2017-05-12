@@ -140,6 +140,16 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
       }
     }
   })
+
+  .state('tab.about', {
+    url: '/about',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/about.html',
+        controller: 'aboutctrl'
+      }
+    }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });

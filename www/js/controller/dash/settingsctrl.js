@@ -6,6 +6,10 @@ soe.controller('settingsctrl', function ($scope, $ionicTabsDelegate, $ionicHisto
 		console.log(event.target.checked);
 	}
 
+	$scope.openAbout = function () {
+		$state.go('tab.about');
+	}
+
 	$scope.openTermsAndConditions = function () {
 		$state.go('tab.termsandconditions');
 	};
