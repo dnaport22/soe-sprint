@@ -72,7 +72,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   };
 
   var processData = function(data) {
-    for (i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
       $scope.items = $scope.items.concat(data[i]);
     }
   };
