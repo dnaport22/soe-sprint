@@ -38,6 +38,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
   var offset = 0;
   var limit = 10;
   var retrieved = 0;
+  var page = 0;
 
   /**
    * Description: loadMore() function is used to retrieve items from the server.
@@ -47,9 +48,11 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
    * @return items from the server $scope.items[]
    */
   $scope.loadMore = function() {
-    $http({ url: soeData_URL.GET_ALL_ITEM_URL, method: soeData_URL.GET_ALL_ITEM_TYPE, cache: $templateCache}).success(function(response) {
+    $http({ url: soeData_URL.GET_ALL_ITEM_URL + page,
+            method: soeData_URL.GET_ALL_ITEM_TYPE,
+            cache: $templateCache}).success(function(response) {
         $scope.processData(response);
-//        retrieved = response.items.length
+        retrieved = response.length;
 //        offset += retrieved
         //$scope.$broadcast('scroll.refreshComplete');
         //$scope.$broadcast('scroll.infiniteScrollComplete');
@@ -57,6 +60,11 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     }).error(function(error) {
       $scope.loadMore();
     });
+  };
+
+  $scope.loadInfiniteScroll = function () {
+    page = page + 1;
+    $scope.loadMore();
   };
 
   $scope.processData = function(data) {
