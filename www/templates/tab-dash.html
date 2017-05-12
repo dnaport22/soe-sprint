@@ -1,9 +1,12 @@
 <ion-view view-title="Feeds">
   <ion-content class="padding">
-    <!-- in the class below add ng-repeat and change image, name and other stuff according to live data -->
+    <ion-refresher
+        pulling-text="Pull to load new feeds..."
+        on-refresh="pullToRefresh()">
+    </ion-refresher>
 
     <!-- Card view of the items -->
-    <div ng-repeat="item in items">
+    <div ng-repeat="item in items track by item.nid">
       <div class="card" ng-click="fullView('sampleTitle', 'sampleBody', 'imgUrl')">
         <h3 class="teaser-title">This is the title of our feed</h3>
         <div class="teaser-container">

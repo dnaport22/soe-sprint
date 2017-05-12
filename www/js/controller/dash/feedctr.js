@@ -36,7 +36,6 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
    */
   $scope.items = [];
   var offset = 0;
-  var limit = 10;
   var retrieved = 0;
   var page = 0;
 
@@ -51,23 +50,28 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
     $http({ url: soeData_URL.GET_ALL_ITEM_URL + page,
             method: soeData_URL.GET_ALL_ITEM_TYPE,
             cache: $templateCache}).success(function(response) {
-        $scope.processData(response);
+        processData(response);
         retrieved = response.length;
-//        offset += retrieved
-        //$scope.$broadcast('scroll.refreshComplete');
-        //$scope.$broadcast('scroll.infiniteScrollComplete');
+        console.log(response)
+
         UIfactory.hideSpinner();
     }).error(function(error) {
       $scope.loadMore();
+    }).finally(function () {
+      $scope.$broadcast('scroll.refreshComplete');
+      $scope.$broadcast('scroll.infiniteScrollComplete');
     });
   };
 
+  /**
+   * Called on infinte scroll
+   */
   $scope.loadInfiniteScroll = function () {
-    page = page + 1;
+    page += page;
     $scope.loadMore();
   };
 
-  $scope.processData = function(data) {
+  var processData = function(data) {
     for (i = 0; i < data.length; i++) {
       $scope.items = $scope.items.concat(data[i]);
     }
@@ -87,7 +91,7 @@ soe.controller('DashCtrl', function($state, $ionicHistory, $scope, $http, $ionic
 
   $scope.pullToRefresh = function() {
     $scope.items = [];
-    offset = 0;
+    page = 0;
     $templateCache.removeAll();
     $scope.loadMore();
   };
