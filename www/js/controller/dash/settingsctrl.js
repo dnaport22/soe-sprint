@@ -26,7 +26,8 @@ soe.controller('settingsctrl', function ($scope, $ionicTabsDelegate, $ionicHisto
 	    $localStorage.soe_user_email = null;
 	    $localStorage.soe_user_token = null;
 	    $localStorage.expiry = null;
-		$state.go('tab.dash');
+	    $ionicHistory.nextViewOptions({disableBack: true});
+		$state.go('tab.login', {reload: true, inherit: false});
 	};
 
 });

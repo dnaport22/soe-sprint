@@ -68,7 +68,7 @@
       <ion-nav-back-button>
       </ion-nav-back-button>
       <ion-nav-buttons side="right">
-        <button class="button icon ion-gear-a" ng-click="openSettings()">
+        <button class="button icon ion-gear-a" ng-click="openSettings()" ng-if="$storage.soe_user_status == 1">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
