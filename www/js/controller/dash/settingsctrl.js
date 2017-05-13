@@ -1,5 +1,7 @@
 soe.controller('settingsctrl', function ($scope, $ionicTabsDelegate, $ionicHistory, $state, $localStorage) {
   	$ionicTabsDelegate.showBar(false);
+
+  	$scope.username = $localStorage.soe_user_username;
   
 	$scope.notificationHandler = function (event) {
 		//make call to the backend
