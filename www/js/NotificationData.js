@@ -33,6 +33,11 @@ soe.constant('PostitemNotification', {
   UPLOAD_ERROR: 'An error occurred while uploading your item. Please try again. If the error persists please email us on hello@mysoe.xyz'
 });
 
+soe.constant('FeedbackFormNotification', {
+  SUBJECT_INVALID: 'Subject cannot be longer than 1000 characters and shorter than 1 character',
+  MESSAGE_INVALID: 'Message cannot be longer than 1000 characters and shorter than 1 character'
+});
+
 soe.constant('UserfactoryNotification', {
   EMPTY_FIELD_ALERT: 'Please complete all fields.',
   EMPTY_EMAIL_ALERT: 'Please enter your email address.',
