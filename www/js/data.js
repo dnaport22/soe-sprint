@@ -9,7 +9,8 @@ soe.constant('soeData_URL', {
   RESET_REQUEST_TYPE: 'POST',
   RESET_VERIFY_URL: 'http://soe-backend.sytes.net/lsbu/soe?entity=user&type=user_reset_pass',
   RESET_VERIFY_TYPE: 'POST',
-
+  GET_ATTENDANCE_URL: 'http://soe-backend.sytes.net/api/lsbu_attendance?_format=json',
+  GET_ATTENDANCE_TYPE: 'GET'
 });
 
 soe.constant('soeData_AUTH', {
