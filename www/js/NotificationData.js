@@ -34,8 +34,7 @@ soe.constant('PostitemNotification', {
 });
 
 soe.constant('FeedbackFormNotification', {
-  SUBJECT_INVALID: 'Subject cannot be longer than 1000 characters and shorter than 1 character',
-  MESSAGE_INVALID: 'Message cannot be longer than 1000 characters and shorter than 1 character'
+  MISSING_FIELD: 'Please fill all the data'
 });
 
 soe.constant('UserfactoryNotification', {
