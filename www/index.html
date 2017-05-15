@@ -56,7 +56,9 @@
     <script src="js/controller/dash/settingsctrl.js"></script>
     <script src="js/Submitform.js"></script>
     <script src="js/controller/navctrl.js"></script>
-    
+    <script src="js/controller/dash/termsandconditionsctrl.js"></script>
+    <script src="js/controller/dash/aboutctrl.js"></script>
+    <script src="js/controller/dash/privacypolicyctrl.js"></script>
   </head>
   <body ng-app="soe">
     <!--
@@ -66,7 +68,7 @@
       <ion-nav-back-button>
       </ion-nav-back-button>
       <ion-nav-buttons side="right">
-        <button class="button icon ion-gear-a" ng-click="openSettings()">
+        <button class="button icon ion-gear-a" ng-click="openSettings()" ng-if="$storage.soe_user_status == 1">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>

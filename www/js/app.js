@@ -129,8 +129,37 @@ var soe = angular.module('soe', ['ionic', 'starter.controllers', 'starter.servic
         controller: 'requestresetctrl'
       }
     }
-  });
+  })
 
+  .state('tab.termsandconditions', {
+    url: '/termsandconditions',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/termsandconditions.html',
+        controller: 'termsandconditionsctrl'
+      }
+    }
+  })
+
+  .state('tab.about', {
+    url: '/about',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/about.html',
+        controller: 'aboutctrl'
+      }
+    }
+  })
+
+  .state('tab.privacypolicy', {
+    url: 'privacypolicy',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/privacypolicy.html',
+        controller: 'privacypolicyctrl'
+      }
+    }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 });
