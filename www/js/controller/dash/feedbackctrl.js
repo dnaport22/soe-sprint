@@ -4,7 +4,6 @@ soe.controller('feedbackctrl', function($scope, $ionicTabsDelegate, UserFactory,
 	});
 
 	$scope.submit = () => {
-
 		var feedback = {
 			subject: inputVal.getValue('feed_subject'),
 			message: inputVal.getValue('feed_message'),
