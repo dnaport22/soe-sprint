@@ -33,6 +33,10 @@ soe.constant('PostitemNotification', {
   UPLOAD_ERROR: 'An error occurred while uploading your item. Please try again. If the error persists please email us on hello@mysoe.xyz'
 });
 
+soe.constant('FeedbackFormNotification', {
+  MISSING_FIELD: 'Please fill all the data'
+});
+
 soe.constant('UserfactoryNotification', {
   EMPTY_FIELD_ALERT: 'Please complete all fields.',
   EMPTY_EMAIL_ALERT: 'Please enter your email address.',

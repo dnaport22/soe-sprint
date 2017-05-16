@@ -1,16 +1,18 @@
 <ion-view view-title="Feedback">
   <ion-content>
-    <div class="list list-inset">
-    <label class="item item-input">
-      <input type="text" placeholder="Subject">
-    </label>
-    <label class="item item-input">
-      <textarea rows="5" placeholder="Message" id="feed_msg" ng-model="feed_msg" maxlength="200"></textarea>
-    </label>
-    <button class="button button-block button-stable">
-      Send
-    </button>
-    </div>
+    <form ng-submit="submit()" class="list list-inset">
+        <label class="item item-input text-center" style="height: 8vh; font-size: 1.2rem;">
+          To: Dean
+        </label>
+        <label class="item item-input">
+          <input id="feed_subject" type="text" placeholder="Subject" style="height: 8vh; font-size: 1.2rem;">
+        </label>
+        <label class="item item-input">
+        <textarea id="feed_message" rows="5" placeholder="Message" maxlength="200" style="height: 34vh; font-size: 1.2rem;"></textarea>
+      </label>
+      <button class="button button-block button-royal">
+            Submit
+      </button>
+    </form>
   </ion-content>
 </ion-view>
-
