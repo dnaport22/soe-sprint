@@ -13,5 +13,15 @@ soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistor
     $state.go('tab.feedback');
   }
 
+    // Navigate use to login page if not logged in
+  if ($localStorage.soe_user_status == 0) {
+    $ionicHistory.nextViewOptions({disableBack: false});
+    $state.go('tab.login');
+  } else {
+    $state.go('tab.dash');
+  }
+
+  $scope.status = $localStorage.soe_user_status;
+
 });
 

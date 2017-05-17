@@ -14,16 +14,6 @@ soe.controller('navctrl', function ($scope, $state, $ionicHistory, $localStorage
 		soe_app_launch_activity: 0
 	});
 
-	// Navigate use to login page if not logged in
-	if ($localStorage.soe_user_status == 0) {
-		$ionicHistory.nextViewOptions({disableBack: false});
-		$state.go('tab.login');
-	} else {
-		$state.go('tab.dash');
-	}
-
-	$scope.status = $localStorage.soe_user_status;
-
 	// $ionicHistory.removeBackView();
 	$ionicHistory.clearCache();
 });
