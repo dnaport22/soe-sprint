@@ -28,6 +28,9 @@ soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistor
     soe_app_launch_activity: 0
   });
 
+  // $ionicHistory.removeBackView();
+  $ionicHistory.clearCache();
+
     // Navigate use to login page if not logged in
   if ($localStorage.soe_user_status == 0) {
     $ionicHistory.nextViewOptions({

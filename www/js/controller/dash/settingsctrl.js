@@ -1,5 +1,6 @@
 soe.controller('settingsctrl', function ($scope, $ionicTabsDelegate, $ionicHistory, $state, $localStorage) {
   	$ionicTabsDelegate.showBar(false);
+  	$ionicHistory.clearCache();
 
   	$scope.username = $localStorage.soe_user_username;
   
