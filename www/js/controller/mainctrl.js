@@ -1,4 +1,4 @@
-soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistory, $ionicTabsDelegate) {
+soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistory, $ionicTabsDelegate, $timeout) {
 
   // The functions below are called to avoid ionic history based navigation.
   $scope.openFeedView = function () {
@@ -15,7 +15,9 @@ soe.controller('mainctrl', function ($scope, $localStorage, $state, $ionicHistor
 
     // Navigate use to login page if not logged in
   if ($localStorage.soe_user_status == 0) {
-    $ionicHistory.nextViewOptions({disableBack: false});
+    $ionicHistory.nextViewOptions({
+       disableBack: true
+    });
     $state.go('tab.login');
   } else {
     $state.go('tab.dash');
